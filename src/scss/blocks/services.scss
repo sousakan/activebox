@@ -1,0 +1,65 @@
+@use 'vars';
+
+.services
+{
+    width: 100%;
+    padding: 8rem 0;
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        padding: 4rem 0 1rem;
+    }
+}
+
+.services__body
+{
+    max-width: vars.$width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.services__list
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        justify-content: space-around;
+    }
+
+}
+
+.services__item
+{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 60px;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        flex-basis: 40%;
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        flex-basis: 90%;
+    }
+}
+
+.services__icon
+{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 2rem;
+    fill: vars.$red;
+}
+
+.services__title
+{
+    margin-bottom: 1.5rem;
+}

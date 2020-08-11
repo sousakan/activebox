@@ -1,0 +1,110 @@
+@use 'vars';
+
+.team
+{
+    width: 100%;
+
+    padding: 100px 0;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        padding: 100px 0 50px;
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        padding: 40px 0 0;
+    }
+}
+
+.team__body
+{
+    max-width: vars.$width;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        padding: 0 50px;
+    }
+}
+
+.team__people
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        justify-content: space-around;
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.team__person
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 0 15px;
+    width: 25%;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        width: 40%;
+
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        width: 100%;
+    }
+}
+
+.team__photo
+{
+    display: block;
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 2rem;
+}
+
+.team__name
+{
+    font-size: 22px;
+    font-weight: normal;
+    color: vars.$black;
+
+    margin-bottom: 10px;
+}
+
+.team__position
+{
+    font-size: 13px;
+    font-weight: normal;
+    color: vars.$red;
+
+    margin-bottom: 2rem;
+}
+
+.team__about
+{
+    font-size: 1rem;
+    font-weight: normal;
+    color: vars.$gray;
+
+    margin-bottom: 1.5rem;
+}
+
+

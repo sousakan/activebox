@@ -1,0 +1,45 @@
+@use 'vars';
+
+.download
+{
+    width: 100%;
+
+    padding: 100px 0;
+    
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        padding: 70px 0;
+    }
+}
+
+.download__title
+{
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    color: vars.$black;
+
+    margin: 0 auto 12px;
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        width: 90%;
+        font-size: 24px;
+    }
+}
+
+.download__text
+{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    color: vars.$black;
+
+    margin: 0 auto 37px;
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        width: 90%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,84 @@
+@use 'vars';
+
+.portfolio
+{
+    width: 100%;
+}
+
+.portfolio__grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 1px;
+    grid-gap: 1px;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
+
+.portfolio__item
+{
+    background-color: vars.$red;
+    overflow: hidden;
+    
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio__cover
+{
+    position: absolute;
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity .3s linear;
+
+    pointer-events: none;
+
+    .portfolio__item:hover &
+    {
+        opacity: 1;
+    }
+}
+
+.portfolio__title
+{
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: vars.$white;
+    text-align: center;
+}
+
+.portfolio__subtitle
+{
+    font-weight: normal;
+    font-size: 1rem;
+    color: vars.$white;
+    text-align: center;
+}
+
+.portfolio__image
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    
+    transition: opacity .3s linear, transform .2s linear;
+    
+    &:hover
+    {
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+}

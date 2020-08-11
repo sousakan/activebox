@@ -1,0 +1,129 @@
+@use 'vars';
+
+.header
+{
+    width: 100%;
+
+    position: absolute;
+}
+
+.header__body
+{
+    max-width: vars.$width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header__nav
+{
+    display: flex;
+    align-items: center;
+
+    height: 100px;
+}
+
+.header__logo
+{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-link
+{
+    display: inline-block;
+}
+
+.header__list
+{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style-type: none;
+
+    @media (max-width: vars.$breakpoint_xl)
+    {
+        display: none;
+    }
+}
+
+.header__link
+{
+    cursor: pointer;
+    color: rgba(vars.$white, .75);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+
+    transition: color .2s linear;
+
+    &:hover
+    {
+        color: lighten(vars.$white, 30%);
+    }
+}
+
+.header__burger
+{
+    display: none;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+
+    @media (max-width: vars.$breakpoint_xl) 
+    {
+        display: block;
+    }
+}
+
+.header__burger-line
+{
+    display: block;
+    width: 30px;
+    height: 3px;
+    transform: translateX(1px);
+
+    background-color: vars.$white;
+    font-size: 0;
+
+    position: relative;
+
+    &::before,
+    &::after
+    {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: vars.$white;
+        transition: transform .2s linear;
+    }
+
+    &::before
+    {
+        transform: translateY(-8px);
+    }
+
+    &::after
+    {
+        transform: translateY(8px);
+    }
+
+    .header__burger:hover &::before
+    {
+        transform: translateY(-14px);
+    }
+
+    .header__burger:hover &::after
+    {
+        transform: translateY(14px);
+    }
+}

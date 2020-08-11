@@ -1,0 +1,71 @@
+@use 'vars';
+
+.links
+{
+    display: flex;
+
+    &--white
+    {
+        & .item
+        {
+            border: 2px solid vars.$white;
+            border-radius: 2px;
+
+            &:hover
+            {
+                background-color: vars.$white;
+            }
+        }
+
+        & .icon
+        {
+            fill: vars.$white;
+
+            &:hover
+            {
+                fill: vars.$black;
+            }
+        }
+    }
+}
+
+.item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid vars.$light_gray;
+    
+    margin-right: 4px;
+
+    width: 40px;
+    height: 40px;
+
+    transition: all .2s linear;
+
+    &:last-child
+    {
+        margin-right: 0;
+    }
+
+    &:hover
+    {
+        border: 1px solid vars.$black;
+
+        & .icon
+        {
+            fill: vars.$black;
+        }
+    }
+}
+
+.icon
+{
+    fill: #C6CACC;
+    
+    width: 16px;
+    height: 16px;
+
+    transition: all .2s linear;
+}
